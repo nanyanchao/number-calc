@@ -1,1 +1,2 @@
-export * from './lib/index'
+import numberCalc from './lib/index'
+export default numberCalc

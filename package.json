@@ -1,6 +1,6 @@
 {
   "name": "number-calc-nyc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "js number calc float",
   "main": "index.js",
   "module": "index.js",
