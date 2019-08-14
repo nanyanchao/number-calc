@@ -1,0 +1,28 @@
+{
+  "name": "number-calc",
+  "version": "0.0.1",
+  "description": "js number calc float",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "test": "mocha test/*.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nanyanchao/number-calc.git"
+  },
+  "keywords": [
+    "number",
+    "calc",
+    "float"
+  ],
+  "author": "xiaolan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nanyanchao/number-calc/issues"
+  },
+  "homepage": "https://github.com/nanyanchao/number-calc#readme",
+  "devDependencies": {
+    "mocha": "^6.2.0"
+  }
+}
