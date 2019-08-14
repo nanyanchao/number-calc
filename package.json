@@ -1,5 +1,5 @@
 {
-  "name": "number-calc",
+  "name": "number-calc-nyc",
   "version": "0.0.1",
   "description": "js number calc float",
   "main": "index.js",
@@ -24,5 +24,10 @@
   "homepage": "https://github.com/nanyanchao/number-calc#readme",
   "devDependencies": {
     "mocha": "^6.2.0"
-  }
+  },
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {}
 }
