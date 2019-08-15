@@ -69,6 +69,10 @@ describe('handle mulNum',function(){
     it('mulNum 1121*900.00=1008900',function(){
         assert.equal(mulNum('1121','900.00',0),'1008900')
     })
+
+    it('mulNum 108.0*1=108.0',function(){
+        assert.equal(mulNum('108.0','1',1),'108.0')
+    })
 })
 
 
