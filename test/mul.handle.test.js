@@ -1,4 +1,4 @@
-let {mul,mulNum} = require('../lib/mul_handle')
+let {mul,mulNum} = require('../src/mul_handle')
 var assert = require('assert');
 
 describe('handle mul',function(){

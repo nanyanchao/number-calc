@@ -1,6 +1,6 @@
 let {
     divNum
-} = require('../lib/div_handle')
+} = require('../src/div_handle')
 var assert = require('assert');
 
 

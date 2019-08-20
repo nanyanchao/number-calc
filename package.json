@@ -1,11 +1,13 @@
 {
   "name": "number-calc-nyc",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "js number calc float",
   "main": "index.js",
   "module": "index.js",
   "scripts": {
-    "test": "mocha test/*.test.js"
+    "test": "mocha test/*.test.js",
+    "compile": "babel src -d lib",
+    "prepublish": "npm run compile"
   },
   "repository": {
     "type": "git",
@@ -23,6 +25,8 @@
   },
   "homepage": "https://github.com/nanyanchao/number-calc#readme",
   "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-es2015": "^6.24.1",
     "mocha": "^6.2.0"
   },
   "directories": {
