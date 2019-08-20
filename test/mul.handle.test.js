@@ -73,7 +73,19 @@ describe('handle mulNum',function(){
     it('mulNum 108.0*1=108.0',function(){
         assert.equal(mulNum('108.0','1',1),'108.0')
     })
-})
 
+    it('mulNum 3000*7.0502968174=21150.89',function(){
+        assert.equal(mulNum('3000','7.0502968174',2),'21150.89')
+    })
+
+
+    it('mulNum 12345566*123 = 1518504618',function(){
+        assert.equal(mulNum('12345566','123'),'1518504618')
+    })
+
+    it('mulNum 12345566*111 = 1370357826',function(){
+        assert.equal(mulNum('12345566','111'),'1370357826')
+    })
+})
 
 
