@@ -1,4 +1,4 @@
-let {slice4,removeLeft,removeRight} = require('../lib/handle')
+let {slice4,removeLeft,removeRight} = require('../src/handle')
 var assert = require('assert');
 
 describe('handle slice4',function(){

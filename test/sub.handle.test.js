@@ -1,5 +1,5 @@
 let {sub,subNum
-} = require('../lib/sub_handle')
+} = require('../src/sub_handle')
 var assert = require('assert');
 
 

@@ -1,11 +1,12 @@
 let {slice4,removeLeft,removeRight} =require('./handle')
 let {addNum} = require('./add_handle')
 
-exports.mul = (a,b)=>{
+ const mul = (a,b)=>{
     return Number(a) * Number(b)
 }
+exports.mul = mul
 
-exports.foreachMul=(numObj1,numObj2)=>{
+const foreachMul=(numObj1,numObj2)=>{
     let before = {};
     let {before :before1} = numObj1;
     let {before:before2} = numObj2;
@@ -20,17 +21,18 @@ exports.foreachMul=(numObj1,numObj2)=>{
             if(!before[i]){
                 before[i]={}
             }
-            before[i][j] = this.mul(before1[i],before2[j])
+            before[i][j] = mul(before1[i],before2[j])
             before.max = j;
         }
     }
     return {before};
 }
+exports.foreachMul = foreachMul
 
-exports.mulNum=(a,b,len=15)=>{
+const mulNum=(a,b,len=15)=>{
     a=a+''; b=b+'';
     if(!(a.includes('.') || b.includes('.')) && (a+b).length<11){
-        return this.mul(a,b)
+        return mul(a,b)
     }
     let aPoint = a.indexOf('.');
     let bPoint = b.indexOf('.');
@@ -66,7 +68,7 @@ exports.mulNum=(a,b,len=15)=>{
 
     let objNumA = slice4(a.replace('.',''));
     let objNumB = slice4(b.replace('.',''));
-    let {before} = this.foreachMul(objNumA,objNumB)
+    let {before} = foreachMul(objNumA,objNumB)
     let carry = 0;
     let last0 = [];
     let result = '0'
@@ -106,4 +108,4 @@ exports.mulNum=(a,b,len=15)=>{
     return isNegative+removeLeft(removeRight(result.slice(0,result.indexOf('.')+len+1),'.'))
 }
 
-
+exports.mulNum = mulNum

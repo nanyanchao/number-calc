@@ -1,23 +1,24 @@
 let {slice4,removeLeft} =require('./handle')
 
-exports.add = (a,b)=>{
+const add = (a,b)=>{
     return Number(a) + Number(b)
 }
+exports.add = add
 
-exports.foreachAdd=(numObj1,numObj2)=>{
+const foreachAdd=(numObj1,numObj2)=>{
     let result = {};
     if(numObj1.max < numObj2.max){
         for(let i in numObj2){
             if(i !== 'max'){
                 if(numObj2.max === Number(i)){
-                    let sum = this.add(numObj1[i]||'0',numObj2[i])
+                    let sum = add(numObj1[i]||'0',numObj2[i])
                     if(sum<0){
                         result[i]= '-'+(Math.abs(sum)+'').padStart(numObj2[i].length,'0')
                     }else{
                         result[i]= (sum+'').padStart(numObj2[i].length,'0')
                     }
                 }else{
-                    result[i]=this.add(numObj1[i]||'0',numObj2[i]) 
+                    result[i]=add(numObj1[i]||'0',numObj2[i]) 
                 }
             }
             else{
@@ -28,14 +29,14 @@ exports.foreachAdd=(numObj1,numObj2)=>{
         for(let i in numObj1){
             if(i !== 'max'){
                 if(numObj1.max === Number(i)){
-                    let sum = this.add(numObj1[i],numObj2[i]||'0') 
+                    let sum = add(numObj1[i],numObj2[i]||'0') 
                     if(sum<0){
                         result[i]= '-'+(Math.abs(sum)+'').padStart(numObj1[i].length,'0')
                     }else{
                         result[i]= (sum+'').padStart(numObj1[i].length,'0')
                     }
                 }else{
-                    result[i]=this.add(numObj1[i],numObj2[i]||'0') 
+                    result[i]=add(numObj1[i],numObj2[i]||'0') 
                 }
             }
             else{
@@ -45,13 +46,13 @@ exports.foreachAdd=(numObj1,numObj2)=>{
     }
     return result;
 }
+exports.foreachAdd=foreachAdd
 
 
-
-exports.addNum=(a,b,len=15)=>{
+const addNum=(a,b,len=15)=>{
     a=a+''; b=b+'';
     if(!(a.includes('.') || b.includes('.')) && (a+b).length<11){
-        return this.add(a,b)
+        return add(a,b)
     }
     let pointLastIndexOf = -1;
     let aBefore = a;
@@ -86,7 +87,7 @@ exports.addNum=(a,b,len=15)=>{
 
     let objNumA = slice4(a);
     let objNumB = slice4(b);
-    let before = this.foreachAdd(objNumA.before,objNumB.before)
+    let before = foreachAdd(objNumA.before,objNumB.before)
     let beforeP = ''
     let carry = 0
 
@@ -132,3 +133,4 @@ exports.addNum=(a,b,len=15)=>{
 }
 
 
+exports.addNum=addNum

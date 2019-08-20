@@ -1,4 +1,4 @@
-let {add,foreachAdd,addNum} = require('../lib/add_handle')
+let {add,foreachAdd,addNum} = require('../src/add_handle')
 var assert = require('assert');
 
 describe('handle add',function(){
