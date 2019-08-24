@@ -1,7 +1,7 @@
 let {slice4,removeLeft} =require('./handle')
 
 const add = (a,b)=>{
-    return Number(a) + Number(b)
+    return Number(a) + Number(b)+''
 }
 exports.add = add
 
@@ -124,7 +124,7 @@ const addNum=(a,b,len=15)=>{
         }
     }
 
- 
+
     if(beforeP.length > pointLastIndexOf){
         let pointIndex = beforeP.length-pointLastIndexOf;
         let reusltBefore = beforeP.slice(0,pointIndex-1)

@@ -2,7 +2,7 @@ let {slice4,removeLeft,removeRight} =require('./handle')
 let {addNum} = require('./add_handle')
 
  const mul = (a,b)=>{
-    return Number(a) * Number(b)
+    return Number(a) * Number(b)+''
 }
 exports.mul = mul
 
