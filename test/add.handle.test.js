@@ -80,6 +80,13 @@ describe('handle addNum',function(){
                    '-0.00001',5),
             '-0.00002')
     })
+
+    it('addNum 150000+ -18815=131185',function(){
+        assert.equal(
+            addNum('150000',
+                   '-18815',5),
+            '131185')
+    })
 })
 
 

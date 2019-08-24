@@ -14,6 +14,10 @@ const div=(a,b,remainder,len,result)=>{
     if(len<0){
         return;
     }
+    if(remainder.includes('-') && result[0] !== '-'){
+        result.unshift('-')
+    }
+    remainder = remainder.replace('-','')
     if(Number(b)=== 0){
         return 0;
     }

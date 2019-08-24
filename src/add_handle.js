@@ -7,6 +7,7 @@ exports.add = add
 
 const foreachAdd=(numObj1,numObj2)=>{
     let result = {};
+
     if(numObj1.max < numObj2.max){
         for(let i in numObj2){
             if(i !== 'max'){
@@ -88,6 +89,7 @@ const addNum=(a,b,len=15)=>{
     let objNumA = slice4(a);
     let objNumB = slice4(b);
     let before = foreachAdd(objNumA.before,objNumB.before)
+
     let beforeP = ''
     let carry = 0
 
@@ -98,6 +100,7 @@ const addNum=(a,b,len=15)=>{
         }else{
             sli4 = sli4 + carry;
         }
+
         if(sli4 > 9999){
             let strSli4 = sli4+'';
             carry = Number(strSli4.slice(0,1));
@@ -107,6 +110,11 @@ const addNum=(a,b,len=15)=>{
             let strSli4 = sli4+'';
             if(strSli4.includes('-')){
                 isNegative = '-'
+                if(before[before.max]>0){
+                    strSli4 = (10000 + (+strSli4)) + '';
+                    carry = -1;
+                }
+                
             }
             if(i !=before.max){
                 beforeP = strSli4.replace('-','').padStart(4,'0') + beforeP;
@@ -116,7 +124,7 @@ const addNum=(a,b,len=15)=>{
         }
     }
 
-    
+ 
     if(beforeP.length > pointLastIndexOf){
         let pointIndex = beforeP.length-pointLastIndexOf;
         let reusltBefore = beforeP.slice(0,pointIndex-1)
@@ -126,6 +134,9 @@ const addNum=(a,b,len=15)=>{
             reusltBefore = reusltBefore.replace('-','')
         }
         reusltBefore = removeLeft(reusltBefore)
+        if(before[before.max]>0){
+            return (reusltBefore||'0') + (reusltAfter? "." :'') + reusltAfter.slice(0,len)
+        }
         return isNegative +(reusltBefore||'0') + (reusltAfter? "." :'') + reusltAfter.slice(0,len)
     }else{
         return isNegative +'0.' + (beforeP.padStart(pointLastIndexOf,'0')).slice(0,len)

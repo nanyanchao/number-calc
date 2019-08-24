@@ -30,6 +30,10 @@ describe('handle divNum',function(){
         assert.equal(divNum('5002.19680000','1',8),'5002.19680000')
     })
 
+    it('divNum 15000/188.15 = 79.723624767472761',function(){
+        assert.equal(divNum('15000','188.15',15),'79.723624767472761')
+    })
+
 })
 
 
