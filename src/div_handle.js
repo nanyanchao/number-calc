@@ -14,9 +14,6 @@ const div=(a,b,remainder,len,result)=>{
     if(len<0){
         return;
     }
-    if(remainder.includes('-') && result[0] !== '-'){
-        result.unshift('-')
-    }
     remainder = remainder.replace('-','')
     if(Number(b)=== 0){
         return 0;
@@ -85,7 +82,7 @@ exports.divNum=(a,b,len=15)=>{
         return "0"
     }
     if(b ==="0"){
-        return;
+        return '';
     }
     let isNegative = ''
     if((a.includes('-') && !b.includes('-')) || (!a.includes('-') && b.includes('-'))){

@@ -86,6 +86,22 @@ describe('handle mulNum',function(){
     it('mulNum 12345566*111 = 1370357826',function(){
         assert.equal(mulNum('12345566','111'),'1370357826')
     })
+
+    it('mulNum 1111*100 = 111100',function(){
+        assert.equal(mulNum('1111','100'),'111100')
+    })
+
+    it('mulNum 1111*0 = 0',function(){
+        assert.equal(mulNum('1111','0'),'0')
+    })
+
+    it('mulNum 1111*0 = 0',function(){
+        assert.equal(mulNum('1111',''),'0')
+    })
+
+
 })
+
+
 
 

@@ -46,3 +46,5 @@ describe('handle subNum',function(){
         assert.equal(subNum('150000','18815'),'131185')
     })
 })
+
+

@@ -34,6 +34,25 @@ describe('handle divNum',function(){
         assert.equal(divNum('15000','188.15',15),'79.723624767472761')
     })
 
-})
+    it('divNum 111100/24613.09656577 = 4.513857072112955',function(){
+        assert.equal(divNum('111100','24613.09656577',4),'4.5138')
+    })
 
+    it('divNum 111100/0 = 4.513857072112955',function(){
+        assert.equal(divNum('111100','',4),'')
+    })
+
+    it('divNum 111100/0 = ',function(){
+        assert.equal(divNum('111100','0',4),'')
+    })
+
+    it('divNum /0 = ',function(){
+        assert.equal(divNum('','0',4),'0')
+    })
+
+
+    it('mulNum 1000000001/55555 = 18000.18001980019800',function(){
+        assert.equal(divNum('1000000001','55555',14),'18000.18001980019800')
+    })
+})
 
