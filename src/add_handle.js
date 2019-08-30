@@ -93,7 +93,6 @@ const addNum=(a,b,len=15)=>{
     let beforeP = ''
     let carry = 0
     let maxNum = Number(before[before.max])
-    console.log(before)
     for(let i = 0;i<before.max;i++){
         let sli4 = Number(before[i]);
         sli4 = sli4 + carry;
