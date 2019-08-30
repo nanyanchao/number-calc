@@ -88,25 +88,27 @@ const addNum=(a,b,len=15)=>{
 
     let objNumA = slice4(a);
     let objNumB = slice4(b);
+    
     let before = foreachAdd(objNumA.before,objNumB.before)
-
     let beforeP = ''
     let carry = 0
-
-    for(let i = 0;i<=before.max;i++){
+    let maxNum = Number(before[before.max])
+    console.log(before)
+    for(let i = 0;i<before.max;i++){
         let sli4 = Number(before[i]);
-        if(carry === 0){
-            sli4 = before[i];
-        }else{
-            sli4 = sli4 + carry;
+        sli4 = sli4 + carry;
+        carry=0
+        if(maxNum<0 && sli4>0){
+            carry = 1
+            sli4 = 10000 - sli4
         }
-
+        
         if(sli4 > 9999){
             let strSli4 = sli4+'';
             carry = Number(strSli4.slice(0,1));
             beforeP = strSli4.slice(1) + beforeP;
         }else{
-            carry= 0;
+            
             let strSli4 = sli4+'';
             if(strSli4.includes('-')){
                 isNegative = '-'
@@ -114,7 +116,6 @@ const addNum=(a,b,len=15)=>{
                     strSli4 = (10000 + (+strSli4)) + '';
                     carry = -1;
                 }
-                
             }
             if(i !=before.max){
                 beforeP = strSli4.replace('-','').padStart(4,'0') + beforeP;
@@ -123,11 +124,16 @@ const addNum=(a,b,len=15)=>{
             }
         }
     }
-
-
+    // maxNum
+    let maxNumStr = maxNum+ carry+''
+    if(before.max===0){
+        maxNumStr = (Math.abs(maxNum+ carry))+''
+        maxNumStr = (Number(maxNum) < 0 ?'-':'')+maxNumStr.padStart(4,'0')
+    }
+    beforeP = maxNumStr + beforeP;
     if(beforeP.length > pointLastIndexOf){
         let pointIndex = beforeP.length-pointLastIndexOf;
-        let reusltBefore = beforeP.slice(0,pointIndex-1)
+        let reusltBefore = beforeP.slice(0,pointIndex)
         let reusltAfter =  beforeP.slice(pointIndex)
         if(reusltBefore.includes('-')){
             isNegative = '-';

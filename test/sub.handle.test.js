@@ -45,6 +45,10 @@ describe('handle subNum',function(){
     it('subNum 150000 - 18815= 131185',function(){
         assert.equal(subNum('150000','18815'),'131185')
     })
+
+    it('subNum 9486.49 - 10238.66 = -752.17',function(){
+        assert.equal(subNum('9486.49','10238.66'),'-752.17')
+    })
 })
 
 
