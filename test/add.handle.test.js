@@ -1,35 +1,35 @@
 let {add,foreachAdd,addNum} = require('../src/add_handle')
 var assert = require('assert');
 
-// describe('handle add',function(){
-//     it('add 1+1=2',function(){
-//         assert.equal(add(1,1),2)
-//     })
+describe('handle add',function(){
+    it('add 1+1=2',function(){
+        assert.equal(add(1,1),2)
+    })
 
-//     it('add -1+1=0',function(){
-//         assert.equal(add(-1,1),0)
-//     })
+    it('add -1+1=0',function(){
+        assert.equal(add(-1,1),0)
+    })
 
-//     it('add 0+0=0',function(){
-//         assert.equal(add(0,0),0)
-//     })
+    it('add 0+0=0',function(){
+        assert.equal(add(0,0),0)
+    })
 
-//     it('add 1+ -1=0',function(){
-//         assert.equal(add(1,-1),0)
-//     })
+    it('add 1+ -1=0',function(){
+        assert.equal(add(1,-1),0)
+    })
     
-// })
+})
 
-// describe('handle foreachAdd',function(){
-//     it('foreachAdd {0:"1234",1:"1",max:1}  {0:"9999",1:"2",max:1}',function(){
-//         assert.deepEqual(foreachAdd(
-//             {0:"1234",1:"1",max:1},
-//             {0:"9999",1:"2",max:1}),
-//             {
-//                 0:"11233",1:"3",max:1
-//             })
-//     })
-// })
+describe('handle foreachAdd',function(){
+    it('foreachAdd {0:"1234",1:"1",max:1}  {0:"9999",1:"2",max:1}',function(){
+        assert.deepEqual(foreachAdd(
+            {0:"1234",1:"1",max:1},
+            {0:"9999",1:"2",max:1}),
+            {
+                0:"11233",1:"3",max:1
+            })
+    })
+})
 
 describe('handle addNum',function(){
     it('addNum 1+1=2',function(){
@@ -94,6 +94,11 @@ describe('handle addNum',function(){
 
     it('subNum 0.999 - 1= -0.001',function(){
         assert.equal(addNum('0.999','-1'),'-0.001')
+    })
+
+
+    it('subNum 0.0000001000 - 0.0000980000 = -0.0000979000',function(){
+        assert.equal(addNum('0.0000001000','-0.0000980000'),'-0.0000979000')
     })
 })
 

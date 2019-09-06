@@ -88,7 +88,6 @@ const addNum=(a,b,len=15)=>{
 
     let objNumA = slice4(a);
     let objNumB = slice4(b);
-    
     let before = foreachAdd(objNumA.before,objNumB.before)
     let beforeP = ''
     let carry = 0
@@ -100,8 +99,16 @@ const addNum=(a,b,len=15)=>{
         if(maxNum<0 && sli4>0){
             carry = 1
             sli4 = 10000 - sli4
+        }else if(before.max - i >1 ){
+            for(let j=before.max-1;j>i;j--){
+                if(Number(before[j])<0 && sli4>0){
+                    carry = 1
+                    sli4 = 10000 - sli4
+                    break
+                }
+            }
+            
         }
-        
         if(sli4 > 9999){
             let strSli4 = sli4+'';
             carry = Number(strSli4.slice(0,1));
@@ -130,6 +137,7 @@ const addNum=(a,b,len=15)=>{
         maxNumStr = (Number(maxNum) < 0 ?'-':'')+maxNumStr.padStart(4,'0')
     }
     beforeP = maxNumStr + beforeP;
+    
     if(beforeP.length > pointLastIndexOf){
         let pointIndex = beforeP.length-pointLastIndexOf;
         let reusltBefore = beforeP.slice(0,pointIndex)
