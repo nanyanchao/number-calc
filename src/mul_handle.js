@@ -8,8 +8,8 @@ exports.mul = mul
 
 const foreachMul=(numObj1,numObj2)=>{
     let before = {};
-    let {before :before1} = numObj1;
-    let {before:before2} = numObj2;
+    let {before :before1={}} = numObj1||{};
+    let {before:before2={}} = numObj2||{};
     for(let i=0;;i++){
         if(before1[i]===undefined){
             break
